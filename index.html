@@ -35,6 +35,11 @@
 	display:inline-block;
 	margin-left:5%;
 }
+
+li.seasons a{
+    /*color:blue;*/
+}
+
   </style>
  </head>
  <body>
@@ -61,8 +66,6 @@
             <li>Summer: <b>#EBA52B</b></li>
             <li>Fall: <b>#A81124</b></li>
             <li>Winter: <b>#005393</b></li>
-        </ul>
-    </p>
     <p>
     Aesthetic gentrify YOLO McSweeney's typewriter single-origin coffee. Slow-carb hella listicle lomo, Helvetica single-origin coffee butcher stumptown. Chambray try-hard church-key mumblecore, tote bag PBR cardigan. Retro Austin Brooklyn, blog Intelligentsia gentrify jean shorts sartorial bicycle rights gastropub. Aesthetic wayfarers Pitchfork, tattooed Carles quinoa meh leggings distillery pork belly banjo. Umami cred lumbersexual skateboard, pork belly Tumblr vegan letterpress. Fixie bicycle rights butcher chillwave, gluten-free health goth Echo Park locavore whatever.
     <img src="images/300x400.png" alt="Season Wear Goes Here" id="wear" />
@@ -85,5 +88,57 @@
     </footer>
   </main>
   <script src="js/main.js"></script>
+  <script>
+/*
+change the src of the img with an id of image
+change the src of the img with and id of wear
+
+color:
+Spring: #2B7129
+Summer: #EBA52B
+Fall: #A81124
+Winter: #005393
+*/
+    $("document").ready(function(){
+       $("li.seasons a").click(function(e){
+            e.preventDefault();
+
+            let season = $(this).attr("href");
+
+        if(season == "Spring"){
+            //Spring
+            $("#logo").attr("src","images/spring.gif");
+            $("#wear").attr("src","images/spring-wear.jpg");
+            $("html").css("background-color","#2B7129");
+            
+        }else if(season == "Summer"){
+            //Summer
+            $("#logo").attr("src","images/summer.gif");
+            $("#wear").attr("src","images/summer-wear.jpg");
+            $("html").css("background-color","#EBA52B");
+
+        }else if(season == "Fall"){
+            //Fall
+            $("#logo").attr("src","images/fall.gif");
+            $("#wear").attr("src","images/fall-wear.jpg");
+            $("html").css("background-color","#A81124");
+            
+        }else if(season == "Winter"){
+            //winter
+            $("#logo").attr("src","images/winter.gif");
+            $("#wear").attr("src","images/winter-wear.jpg");
+            $("html").css("background-color","#005393");
+        }else{
+            $("#logo").attr("src","images/four-seasons.gif");
+            $("#wear").attr("src","images/a0000213_main.jpeg");
+            $("html").css("background-color","#808B96");
+        }
+            //alert(season);
+
+            //alert("I'm clicked!")
+       });
+    });
+
+  </script>
   </body>
 </html>
